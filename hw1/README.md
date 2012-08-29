@@ -1,8 +1,8 @@
 # Homework 1: Enron email command-line wrangling 
 ### CS186, UC Berkeley, Fall 2012
-### Points: [5% of your final grade](https://sites.google.com/a/cs.berkeley.edu/cs186-fa12/basic-info/grading-info)
+### Points: [5% of your final grade](https://sites.google.com/a/cs.berkeley.edu/cs186-fa2012/additional-course-information)
 ### Note: *This homework to be done individually!*
-### Due: Thursday, 1/26, 11:59 PM
+### Due: Friday, 9/7, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Description
 This assignment will give you some experience with a typical task in modern data management:
@@ -23,7 +23,7 @@ or statistical package.
 ###Your tools
 For this assignment, you are limited to using [Ruby](http://ruby-lang.org), [bash](http://www.gnu.org/software/bash/), and the [standard Unix utilities](http://en.wikipedia.org/wiki/List_of_Unix_utilities).  We strongly encourage you to use Ruby's built-in [CSV](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html) and [find](http://ruby-doc.org/stdlib-1.9.2/libdoc/find/rdoc/Find.html) libraries, and the [mail](https://github.com/mikel/mail/blob/master/README.md) gem to deal with email files, directory trees, and csv files.  All of these are pre-installed on the instructional machines for you.  You should not need to use any additional Ruby gems in your solution. (You may find [ruby-debug](http://bashdb.sourceforge.net/ruby-debug.html) useful along the way -- it is also installed.)
 
-We assume that CS186 students can pick up scripting languages like Ruby and bash on their own; there will be no Ruby or bash training as part of the class.  The course webpages have some [suggested resources for Ruby](https://sites.google.com/a/cs.berkeley.edu/cs186-s12/basic-info).
+We assume that CS186 students can pick up scripting languages like Ruby and bash on their own; there will be no Ruby or bash training as part of the class.  The course webpages have some [suggested resources for Ruby](https://sites.google.com/a/cs.berkeley.edu/cs186-fa2012/additional-course-information).
 
 ###Your constraints
 You need to be able to handle an input directory that is far larger than the memory of the computer that runs the script.  To do so, you should:
