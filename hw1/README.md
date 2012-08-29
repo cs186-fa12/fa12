@@ -63,7 +63,7 @@ In addition to this README file, you will see:
 ##Specification
 Your solution should be driven by a `hw1.sh` script that is passed one argument: the root of a directory that contains valid email files:
 
-    % ./hw1.sh ~cs186/fa12/hw1/enron_sample
+    % ./hw1.sh ~cs186/fa12/hw1/enron_tiny
     
 The directory may contain arbitrary files, but the ones that are to be parsed as email must have names ending in ".txt".
 
