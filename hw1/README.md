@@ -75,7 +75,7 @@ The script should overwrite the four example csv output files, as follows:
 * `state_counts.csv` is intended to store the rough result of the question "how often is each state mentioned in an email?" It should have the same header as the example file, and then contain those rows from `token_counts.csv` with the (lowercase) name of a US state in the `token` field.  For states containing two tokens in their name, we will look for rows containing only one of the two tokens:
     * "rhode island": *look for rows containing "rhode" (the first token)*
     * "new hampshire", "new jersey", "new mexico", "new york", "north carolina", "north dakota", "south carolina", "south dakota", "west virginia": *look for rows containing the second token*.  Note that this will, for example, mix up "north carolina" and "south carolina" into a single token; that's fine for now.
-* Your final solution should be able to run test/tc_full in under 5 minutes!
+* Your final solution should be able to run `test/tc_full` in under 5 minutes!
 
 ###Testing
 A simple [Ruby unit test](http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing) is provide in `tc_sanity.rb`.  If your code is working, you should see something like this if you type the first line to a bash shell:
