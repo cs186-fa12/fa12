@@ -1,0 +1,35 @@
+.row
+  .span12
+
+    %ul.nav.nav-tabs
+      %li.active
+        %a{:data => {:toggle => "tab"}, :href => "#nearby_locations" } Nearby Locations
+      %li
+        %a{:data => {:toggle => "tab"}, :href => "#following_locations" } Following Locations
+      %li
+        %a{:data => {:toggle => "tab"}, :href => "#create_location", :id => "create_tab_btn" } Create New Location
+
+    %div.tab-content
+      %div#nearby_locations.tab-pane.active
+        %h3 Nearby Locations
+        %hr/
+        #nearby-locations-map-canvas{:style => "width: 600px; height: 400px;"}
+        %hr/
+        #nearby-locations-list
+
+      %div#following_locations.tab-pane
+        %h3 Following Locations
+        %hr/
+        -@following_locations.each do |loc|
+          =render "locations/location", :location => loc
+
+      %div#create_location.tab-pane
+        %h3 Create a new Location
+        %hr/
+        #new-location-map-canvas{:style => "width: 600px; height: 400px;"}
+        =simple_form_for :location, :url => locations_path, :html => {:style => "form-horizontal"} do |f|
+          =f.input :name
+          =f.input :latitude, :as => :string, :input_html => {:readonly => "true"}
+          =f.input :longitude, :as => :string, :input_html => {:readonly => "true"}
+          =f.button :submit, "Create Location", :class => "btn btn-primary", :disabled => "true", :id => "create_location_btn"
+

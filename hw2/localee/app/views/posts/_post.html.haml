@@ -1,0 +1,8 @@
+.well
+  %strong #{post[:author] }:
+  =post[:text]
+  %br/
+  %small
+    =time_ago_in_words(post[:created_at])
+    ago at
+    =link_to post[:location][:name], location_path(post[:location][:id])

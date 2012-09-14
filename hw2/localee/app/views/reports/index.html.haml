@@ -1,0 +1,44 @@
+.row
+  .span12
+  %h3 Reports
+.row
+  .span5.offset1
+    %h4 Top 5 Users With the Most # of Posts
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th User
+          %th # of Posts
+      %tbody
+        -@users_most_posts.each do |u|
+          %tr
+            %td=u["name"]
+            %td=u["num_posts"]
+
+  .span5
+    %h4 Top 5 Locations With Posts From the Most # of Unique Users (at least 2 unique users)
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Location Name
+          %th # Unique Users
+      %tbody
+        -@locations_most_posters.each do |u|
+          %tr
+            %td=u["name"]
+            %td=u["num_users"]
+
+.row
+  .span5.offset1
+    %h4 Top 5 Users Following the Most # of Locations With at Least 2 Posts
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th User
+          %th # of Locations
+      %tbody
+        -@users_most_locations.each do |u|
+          %tr
+            %td=u["name"]
+            %td=u["num_locations"]
+

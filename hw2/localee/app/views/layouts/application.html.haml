@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title loCALee
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyCT3mSc5dDhca0f5HRkq7cLY4xKu770FhY&sensor=true" 
+    = csrf_meta_tags
+  %body
+    =render :partial => "header"
+    
+    .container
+      .row
+        .span12
+          #content
+            =yield

@@ -1,0 +1,15 @@
+.navbar
+  .navbar-inner
+    =link_to nil, :class => "brand" do
+      loCALee
+    %ul.nav
+      %li
+        =link_to "Home", root_path
+      %li
+        =link_to "Reports", reports_path
+    .pull-right
+      %ul.nav
+        %li
+          =link_to "Login", login_path
+        %li
+          =link_to "Sign up", signup_path
