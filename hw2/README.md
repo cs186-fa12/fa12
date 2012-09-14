@@ -5,21 +5,21 @@
 ### Due: Monday, 10/1, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Table Of Contents
-*  [Important](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#important)
-*  [Description](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#description)
-*  [Your Mission](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#your-mission)
-*  [Development Environment](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#development-environment)
-*  [Rails Background](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#rails-background)
-*  [Specifications](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#specifications)
-*  [Part I: Database Schema Design (Rails Migrations and Models)](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#part-i-database-schema-design-rails-migrations-and-models)
-*  [Part II: Web Application Server (Rails Controllers)](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#part-ii-web-application-server-rails-controllers)
-*  [Part III: Analytic Queries (SQL Queries)](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#part-iii-analytic-queries-sql-queries)
-*  [Submission](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#submission)
-*  [Acknowledgements](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#acknowledgements)
+*  [Important](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#important)
+*  [Description](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#description)
+*  [Your Mission](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#your-mission)
+*  [Development Environment](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#development-environment)
+*  [Rails Background](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#rails-background)
+*  [Specifications](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#specifications)
+*  [Part I: Database Schema Design (Rails Migrations and Models)](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#part-i-database-schema-design-rails-migrations-and-models)
+*  [Part II: Web Application Server (Rails Controllers)](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#part-ii-web-application-server-rails-controllers)
+*  [Part III: Analytic Queries (SQL Queries)](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#part-iii-analytic-queries-sql-queries)
+*  [Submission](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#submission)
+*  [Acknowledgements](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#acknowledgements)
 
 ##IMPORTANT!
-*  Use the virtual machine for this project. Details are in the [Development Environment](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#development-environment) section.
-*  Read our [Rails Background](https://github.com/radlab/cs186-fa12/blob/master/hw2/README.md#rails-background). It discusses all the major concepts needed for this project.
+*  Use the virtual machine for this project. Details are in the [Development Environment](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#development-environment) section.
+*  Read our [Rails Background](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#rails-background). It discusses all the major concepts needed for this project.
 *  The official [Rails Guide](http://guides.rubyonrails.org/) is also your friend. It my best friend last week.
 
 ##Description
@@ -125,7 +125,7 @@ If you would like more info check out: http://devcenter.heroku.com/articles/shar
 
 ##Rails Background
 
-We created a [Rails background](https://github.com/radlab/cs186-fa12/blob/master/hw2/RailsBackground.md) page for you to learn some of the concepts of Rails.
+We created a [Rails background](https://github.com/cs186-fa12/fa12/blob/master/hw2/RailsBackground.md) page for you to learn some of the concepts of Rails.
 
 **Read the background page to learn about everything you need to know for this project.
 It will really help to understand how to complete this project.
