@@ -263,9 +263,18 @@ The methods you will have to implement are:
      * `num_locations` - number of locations (has at least 2 posts) the user follows
 
 ##Submission
+We will drop/erase and migrate the database before testing your implementation, so make sure that works.
+To test it out (**this will delete all your data**):
+
+```
+> rake db:drop # drop all the tables from the database
+> rake db:migrate # re-create the tables/schema from your migrations
+```
+
 The files you need to submit are:
 *  hw2.tar
    *  This file has to be created in your virtual machine (or where you developed from), because that is where your implementation is.
+   *  To be extra nice to your GSI's, you can delete the `hw2/localee/tmp/` directory. =)
    *  In the `fa12/hw2/` directory, run `tar -cvf hw2.tar localee` to generate the file.
    *  It is good to check the tar file by simply extracting in some other location, and running the app.
    *  You can transfer the file to the inst machines with `scp hw2.tar cs186-XX@hive1.cs.berkeley.edu:/path/to/where/you/want/the/file/`
