@@ -4,6 +4,9 @@
 ### Note: *This homework is to be done in pairs!*
 ### Due: Monday, 10/1, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
+##Edits
+*  9/16 8:10pm - Added clarification for what the keys and values of the hashes should be, to the end of Part II.
+
 ##Table Of Contents
 *  [Important](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#important)
 *  [Description](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#description)
@@ -20,7 +23,7 @@
 ##IMPORTANT!
 *  Use the virtual machine for this project. Details are in the [Development Environment](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#development-environment) section.
 *  Read our [Rails Background](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#rails-background). It discusses all the major concepts needed for this project.
-*  The official [Rails Guide](http://guides.rubyonrails.org/) is also your friend. It my best friend last week.
+*  The official [Rails Guide](http://guides.rubyonrails.org/) is also your friend. It was my best friend last week.
 
 ##Description
 You have just been hired by a hot new start-up, loCALee! Congratulations!
@@ -204,6 +207,10 @@ The methods you will need to implement are:
    * Returns all the locations
 
 More detailed specifications are in the comments for each method.
+In the comments, most of the return types will be array of hashes, or hashes.
+The comments specify what the keys and values of the hashes should be.
+For example, if it says a hash should include ":name - the name of the location", it means the key is `:name` and the value is the value of the name.
+Therefore `h[:name]` will be the name of the location.
 
 ####Running SQL Queries Directly on the Database
 
