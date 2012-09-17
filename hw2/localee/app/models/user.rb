@@ -15,15 +15,6 @@ class User < ActiveRecord::Base
   ############################################
   #  TODO: you may optionally add code here  #
   ############################################
-
-  # Associations
-  has_many :posts
-  has_and_belongs_to_many :locations
-  has_many :followed_posts, :through => :locations, :class_name => "Post", :source => :posts
-  
-  def follows_location?(location_id)
-    self.locations.exists?(:id => location_id)
-  end
   
   def to_hash
     {
