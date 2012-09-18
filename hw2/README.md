@@ -5,6 +5,7 @@
 ### Due: Monday, 10/1, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Edits
+*  9/17 6:54pm - Clarify what a "post" is.
 *  9/16 8:10pm - Added clarification for what the keys and values of the hashes should be, to the end of Part II.
 
 ##Table Of Contents
@@ -149,6 +150,7 @@ These are the specifications for the loCALee project:
    *  Locations must also have GPS coordinates (latitude and longitude)
    *  The locations page show all the posts to that location, with the latest post first
 *  Users can create posts to locations
+   *  A post is a piece of text the user creates for the particular location
    *  Posts are always associated with a single location
    *  Posts are always associated with the user who posted it
 *  Users can follow or unfollow locations
