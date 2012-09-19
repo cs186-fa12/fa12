@@ -10,6 +10,25 @@ This section will discuss some of the main features relevant to this project.
 In the Rails framework, schema design and database querying are achieved using ActiveRecord [Migrations and Models](http://guides.rubyonrails.org/migrations.html).
 Migrations are basically fancy [DDL](http://en.wikipedia.org/wiki/Data_Definition_Language) statements in Ruby, and Models are basically ruby classes representing an entity.
 
+##Relationship Between Database Tables and Models
+
+Rails primarily interacts with the data in the database through an [Object-relational mapping](http://en.wikipedia.org/wiki/Object-relational_mapping) layer.
+What this means is that there is a 1:1 mapping between a row in a relational table and an object instance of a class.
+Rails allows the programmer to simply run programs on Ruby objects, and in the background the rows in the database tables are read or modified.
+
+Here is an example of how the mapping would work.
+In the database there is a table named `Users`, and it has the fields `id` and `name`.
+Say there is also a Rail model named `User`.
+*  The `Users` table in the database maps to the `User` model.
+*  An instance (object) of the `User` model maps to a single row in the `Users` table.
+*  If there was a row in the `Users` table with the values (1, "John"), you can create an instance of the model with `u = User.find_by_id(1)`
+*  You can read any field from the table by accessing it through the instance.  For example, you could read the name of the user with: `u.name`
+*  If you change fields of the model instance and save it, it will modify the underlying database.  For example, if you do `u.name = "Johnny"` then save it with `u.save`, the row in the database table will then look like (1, "Johnny")
+
+That is how the basic interaction works between models and database tables.
+Rails models also allow lots of other functionality, including validations and associations, which are discussed later in this document.
+
+
 ##ActiveRecord Migrations
 **Please refer to the [Migration guide](http://guides.rubyonrails.org/migrations.html) for more details.**
 
