@@ -304,5 +304,156 @@ When the association is a collection of objects, you can add or delete to the co
 The guides for [`has_many`](http://guides.rubyonrails.org/association_basics.html#has_many-association-reference) and [`has_and_belongs_to_many`](http://guides.rubyonrails.org/association_basics.html#has_and_belongs_to_many-association-reference) have more details.
 
 ##How does this relate to CS186 concepts?
-coming soon...
 
+In this section we will just discuss how CS186 concepts map to Rails constructs.
+
+####DDL Statements
+[Data Definition Language](http://en.wikipedia.org/wiki/Data_Definition_Language) statements in SQL are usually just executed on the database, like `CREATE TABLE...` or `ALTER TABLE`.
+
+In Rails, these DDL statements are defined in migrations.
+Running `rake db:migrate` will execute the migrations not yet run on the database.
+
+####Create Table Statement
+In SQL, you would typically create a create table DDL statement like:
+
+```
+CREATE TABLE Students (
+  id INTEGER,
+  name TEXT,
+  PRIMARY KEY (id)
+)
+```
+
+In Rails, the same create table statement would be in a migration, and look like:
+
+```ruby
+class CreateStudents < ActiveRecord::Migration
+  def change
+    # the id field is implicitly created, and is the primary key.
+    create_table :students do |t|
+      t.string :name
+    end
+  end
+end
+```
+
+####Foreign Keys
+In SQL foreign keys are defined like:
+
+```
+CREATE TABLE Students (
+  id INTEGER,
+  name TEXT,
+  PRIMARY KEY (id)
+)
+
+CREATE TABLE Enrolled (
+  student_id INTEGER,
+  course_id INTEGER,
+  FOREIGN KEY (student_id) REFERENCES Students,
+  FOREIGN KEY (course_id) REFERENCES Courses
+)
+```
+
+The equivalent migration in Rails would be:
+
+```ruby
+class CreateEnrolled < ActiveRecord::Migration
+  def change
+    create_table :enrolled do |t|
+      t.integer :student_id
+      # equivalent to: t.references :student
+      t.integer :course_id
+      # equivalent: t.references :course
+    end
+  end
+end
+```
+
+####ER Model Entity and Entity Sets
+In the [ER model](Entity–relationship model), has the concept of Entities and Entity Sets.
+These two concepts also exist in Rails.
+Just to review, an Entity Set is a set or collection of entities, and an Entity is a single instance from an Entity Set.
+
+A Model in Rails maps to the Entity Set in the ER model.
+For example, the Students model would describe and define the behavior of the collection of all Students.
+
+A single instance (an object) of the model maps to the Entity in the ER model.
+In the Students example, an single object of the class would be an entity in the ER model.
+
+####Primary Keys
+In the relational model, most tables have primary keys to uniquely identify a single row in the table.
+A primary key is defined on the Students table like,
+
+```
+CREATE TABLE Students (
+  id INTEGER,
+  name TEXT,
+  PRIMARY KEY (id)
+)
+```
+
+In Rails, the default behavior is to implicitly create the primary key field.
+Rails auto-generates a field named `id` and is defined to be the primary key.
+
+In the relational model, you can also create composite primary keys.
+Rails does not support composite primary keys, but the similar functionality can be implemented in Rails with validations (more details in the next section).
+
+####Unique Keys
+In SQL, to create a unique field you can just define a unique key like `UNIQUE KEY (email)`.
+
+In Rails, the same uniqueness constraint is achieved with a validation defined in the model, `validates :email, :uniqueness => true`.
+
+To ensure uniqueness across multiple columns in SQL, you can just create a composite unique key.
+Rails achieves this using scopes for validations.
+For example, to [validate uniqueness](http://guides.rubyonrails.org/active_record_validations_callbacks.html#uniqueness) across two columns, the model should define, `validates :col1 :uniqueness => { :scope => :col2}`
+
+####1-to-1 Relationship Set
+In Rails, the 1-to-1 relationship between entities can be defined by adding associations in the two related models.
+The 1-to-1 relationship is defined with a `has_one` association in one model, and the `belongs_to` association in the other model.  Here is an example:
+
+```ruby
+Class Student < ActiveRecord::Base	
+  has_one :transcript
+end
+
+Class Transcript < ActiveRecord::Base	
+  belongs_to :student
+end
+```
+
+This defines the 1-to-1 relationship between Students and Transcripts.
+
+####1-to-Many (or Many-to-1) Relationship Set
+In Rails, the 1-to-Many (or Many-to-1) relationship between entities is defined with a `has_many` association in one model and a `belongs_to` in the other model.
+
+```ruby
+Class Student < ActiveRecord::Base  
+  belongs_to :advisor
+end
+
+Class Advisor < ActiveRecord::Base	
+  has_many :students
+end
+```
+
+This defines the 1-to-Many relationship between Advisors and Students.
+Advisors can have many students, but a student only has a single advisor.
+
+####Many-to-Many Relationship Set
+The Many-to-Many relationship is defined by using the `has_and_belongs_to_many` association on both models.
+
+```ruby
+Class Student < ActiveRecord::Base  
+  has_and_belongs_to_many :courses
+end
+
+Class Course < ActiveRecord::Base  
+  has_and_belongs_to_many :students
+end
+```
+
+This defines the Many-to-Many relationship between Students and Courses.
+Students can take multiple courses, and a course can have multiple students.
+
+The [has_and_belongs_to_many guide](http://guides.rubyonrails.org/association_basics.html#the-has_and_belongs_to_many-association) has a useful figure on how the database tables should look like, and the [tips and warnings](http://guides.rubyonrails.org/association_basics.html#updating-the-schema) has useful information on how the tables should be named.
