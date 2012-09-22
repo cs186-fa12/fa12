@@ -2,10 +2,7 @@
   %strong
     =link_to location[:name], location_path(location[:id])
   .pull-right
-    -if current_user.follows_location?(location[:id])
-      =link_to "Unfollow", unfollow_location_path(location[:id]), :class => "btn btn-small", :method => :post
-    -else
-      =link_to "Follow", follow_location_path(location[:id]), :class => "btn btn-small", :method => :post
+    =link_to "Unfollow", unfollow_location_path(location[:id]), :class => "btn btn-small", :method => :post
   %p
     =location[:latitude]
     ,
