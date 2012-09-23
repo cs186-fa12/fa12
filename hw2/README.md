@@ -242,6 +242,20 @@ You can run those methods in the rails console:
 
 Use the console to make sure your implementation/schema prevents the database from being corrupted.
 
+####Generating Sample Data
+We have provide you with a simple script which generates data by using the methods in the file `app/controllers/app_query.rb`.
+It should be run with an empty database, so you will have to drop the database (erases all data!) before running this script.
+Here is how you can generate the data:
+
+```
+> rake db:drop # drop all the tables from the database
+> rake db:migrate # re-create the tables/schema from your migrations
+> rake generate_fake_data # our script to generate data for your app
+```
+
+The script generates 15 users and 15 loations, where each user has the name/email/password `userX` (where X is 1 to 15), so you can login with a generated user.
+Hopefully, this script will be helpful in testing your implementation.
+
 ##Part III: Analytic Queries (SQL Queries)
 In addition to the interactive web application backend implementation, you also need to write some analytics queries in order to see how the service is being used.
 For this part, you will only need to modify the file: `app/controllers/app_query.rb`
