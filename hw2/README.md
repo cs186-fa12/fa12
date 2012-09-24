@@ -2,7 +2,7 @@
 ### CS186, UC Berkeley, Fall 2012
 ### Points: [10% of your final grade](https://sites.google.com/a/cs.berkeley.edu/cs186-fa2012/additional-course-information)
 ### Note: *This homework is to be done in pairs!*
-### Due: Monday, 10/1, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
+### Due: Wednesday, 10/3, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Edits
 *  9/22  9:05pm - Added documentation on how to run a [script to generate fake data](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#generating-sample-data).
@@ -32,7 +32,7 @@
 You have just been hired by a hot new start-up, loCALee! Congratulations!
 
 loCALee hired you because they want you to head their development team, and need your expertise in database schema design.
-You are to implement their backend service implementation before their release on October 1, 2012.
+You are to implement their backend service implementation before their release on October 3, 2012.
 loCALee is a Twitter variant, but it is heavily focused on locations (loCALee ~ locally).
 All users post updates to locations, and all users follow locations, not other users.
 For this assignment, you will implement this functionality to open up the service to the public soon!
