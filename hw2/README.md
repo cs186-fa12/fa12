@@ -5,6 +5,7 @@
 ### Due: Wednesday, 10/3, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Edits
+*  9/26  2:44pm - FYI: If the server crashes when trying to sign up a user, please make sure the password is at least 5 characters long.
 *  9/24 12:12pm - Extended the deadline to 10/3.
 *  9/22  9:05pm - Added documentation on how to run a [script to generate fake data](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#generating-sample-data).
 *  9/19 10:29pm - Added a clarification on the [relationship between tables and models](https://github.com/cs186-fa12/fa12/blob/master/hw2/RailsBackground.md#relationship-between-database-tables-and-models), and a section on how [CS186 topics related to Rails](https://github.com/cs186-fa12/fa12/blob/master/hw2/RailsBackground.md#how-does-this-relate-to-cs186-concepts), to the Rails Background page.
