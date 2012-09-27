@@ -5,6 +5,7 @@
 ### Due: Wednesday, 10/3, 11:59 PM (You have 4 slip days for all CS186 projects. Use them wisely)
 
 ##Edits
+*  9/26  8:28pm - The `generate_fake_data` script had a bug in it, so the code was updated. Run `git pull` to get the updated script.
 *  9/26  2:44pm - FYI: If the server crashes when trying to sign up a user, please make sure the password is at least 5 characters long.
 *  9/24 12:12pm - Extended the deadline to 10/3.
 *  9/22  9:05pm - Added documentation on how to run a [script to generate fake data](https://github.com/cs186-fa12/fa12/blob/master/hw2/README.md#generating-sample-data).
