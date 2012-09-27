@@ -25,11 +25,13 @@ task :generate_fake_data => :environment do
     aq.create_location({:name => lname, :latitude => lat, :longitude => lng})
   end
 
-  user_ids = aq.get_all_users.map do |u|
+  aq.get_all_users
+  user_ids = aq.users.map do |u|
     u[:id]
   end
 
-  location_ids = aq.get_all_locations.map do |l|
+  aq.get_all_locations
+  location_ids = aq.locations.map do |l|
     l[:id]
   end
 
