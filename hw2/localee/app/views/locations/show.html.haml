@@ -4,8 +4,8 @@
 
 .row
   .span12
-    =simple_form_for Post.new(:location_id => @location[:id]), :url => posts_path do |f|
-      =f.hidden_field :location_id
+    =simple_form_for :post, :url => posts_path do |f|
+      =f.input :location_id, :as => :hidden, :input_html => { :value => @location[:id] }
       =f.input :text, :label => false, :input_html => {:class => "span12", :rows => 3}, :placeholder => "Type something cool here."
       =f.button :submit, "Create Post", :class => "btn btn-primary"
 
