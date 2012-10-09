@@ -312,7 +312,7 @@ You will need to submit the following 5 files.
 
 * src/backend/storage/buffer/freelist.c
 * src/include/storage/buf_internals.h
-* performance.txt: Report the hit rates in 16 lines. Please refer to the [Reporting Test Result](https://github.com/radlab/cs186-fa12/blob/master/hw3/README.md#reporting-test-results) section for details.
+* performance.txt: Report the hit rates in 16 lines. Please refer to the [Reporting Test Result](https://github.com/radlab/cs186-fa12/fa12/blob/master/hw3/README.md#reporting-test-results) section for details.
 * README: If you are using slip days, your README should contain a single digit indicating the number of slip days you wish to use. For example, if you wanted to use two slip days, the README would consist of only one line with the number: `2`. If you are not using any slip days, the README should be empty.
 * MY.PARTNERS: This will be auto-generated when you run the submit hw3 script.
 
