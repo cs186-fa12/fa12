@@ -5,12 +5,12 @@
 ### Due: Tuesday 23 October 2012 (You have 4 slip days for all CS186 projects. Use them wisely.)
 
 ##Table Of Contents
-*  [Outline](https://github.com/cs186-fa12/blob/master/hw3/README.md#outline)
-*  [Environment Setup](https://github.com/cs186-fa12/blob/master/hw3/README.md#environment-setup)
-*  [Code Digesting](https://github.com/cs186-fa12/blob/master/hw3/README.md#code-digesting)
-*  [Buffer Replacement Algorithms](https://github.com/cs186-fa12/blob/master/hw3/README.md#buffer-replacement-algorithms)
-*  [Testing and Debugging](https://github.com/cs186-fa12/blob/master/hw3/README.md#testing-and-debugging)
-*  [Submission](https://github.com/cs186-fa12/blob/master/hw3/README.md#submission)
+*  [Outline](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#outline)
+*  [Environment Setup](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#environment-setup)
+*  [Code Digesting](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#code-digesting)
+*  [Buffer Replacement Algorithms](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#buffer-replacement-algorithms)
+*  [Testing and Debugging](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#testing-and-debugging)
+*  [Submission](https://github.com/cs186-fa12/fa12/blob/master/hw3/README.md#submission)
 
 ## Outline
 
