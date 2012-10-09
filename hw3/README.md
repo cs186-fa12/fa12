@@ -196,7 +196,7 @@ We provide two data files R and S in `fa12/hw3/test/`. You can load them onto th
 
 Note that this step needs to be done only once, as long as you do not wipe out your database.
 
-### Startting PostgreSQL Server with Configuration Parameters
+### Starting PostgreSQL Server with Configuration Parameters
 
 Stop the PostgreSQL server if you already started it, and use the following command to re-start the server:
 
