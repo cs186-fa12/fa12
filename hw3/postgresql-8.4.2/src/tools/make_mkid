@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# $PostgreSQL: pgsql/src/tools/make_mkid,v 1.11 2006/03/11 04:38:41 momjian Exp $
+
+mkid `find \`pwd\`/ \( -name _deadcode -a -prune \) -o \
+	-type f -name '*.[chyl]' -print|sed 's;//;/;g'`
+
+find . -name  'CVS' -prune -o -type d -print  |while read DIR
+do
+	[ "$DIR" != "." ] && ln -f -s `echo "$DIR" | sed 's;/[^/]*;/..;g'`/ID $DIR/ID
+done
