@@ -105,7 +105,7 @@ To leave psql and go back to the linux command-line, type 'Ctrl-D' or '\q'.
 
 ## Code Digesting
 
-To understand the implementation of PostgreSQL's buffer manager, you should first familiarize yourself with the following files:
+The first step of the homework is to understand the implementation of PostgreSQL's buffer manager. You may find the following files relevant:
 
 *  src/backend/storage/buffer/buf_init.c
 *  src/backend/storage/buffer/bufmgr.c
@@ -114,7 +114,7 @@ To understand the implementation of PostgreSQL's buffer manager, you should firs
 *  src/include/storage/buf.h
 *  src/include/storage/bufmgr.h
 
-You will be primarily working with `freelist.c`. Maybe adding some data structures to `buf_internals.h` is also necessary. You are allowed to submit files other than these two. Make sure they have all the changes you need to finish this homework. To quickly browse the PostgreSQL source code, you may find tools like cscope and tags to be helpful.
+You will be primarily modifying `freelist.c`. Maybe adding some data structures to `buf_internals.h` is also necessary. You are not allowed to submit other source files than these two, so make sure they include all your changes. To quickly browse the PostgreSQL source code, you may find tools like cscope and tags to be helpful.
 
 The following functions are worth particular attention:
 
@@ -123,22 +123,14 @@ The following functions are worth particular attention:
 * `BufferUnpinned()` in `freelist.c`
   This is called when a buffer's reference count reaches zero -- i.e., the buffer was previously pinned (in use), but it is now unused (and hence a candidate for replacement).
 * `StrategyInitialize()` in `freelist.c`: This is called to initialize any shared-memory data structures used by the replacement policy.
-`PinBuffer()` and `PinBuffer_Locked()` in `bufmgr.c`: These functions are called to pin a buffer (i.e., to increase its refcount by one). Note that refcount variable in the code base is what we commonly call pin count. The clock reference counter variable is named usage_counter. If the refcount variable is non-zero, it indicates the page is being used and the page should NOT be a candidate for replacement.
+* `PinBuffer()` and `PinBuffer_Locked()` in `bufmgr.c`: These functions are called to pin a buffer (i.e., to increase its refcount by one). Note that the *refcount* variable in the code is actually what we call *pin_count* in the class. The clock reference counter variable is named usage_counter. If the refcount variable is non-zero, it indicates the page is being used and the page should NOT be a candidate for replacement.
 
-In the source code, we placed some **CS186** and **TODO** comments to help you finish the task. It may take you some time to digest the code. Be patient and strategic.
-
-When you are done working with the source, you need to rebuild and install your modified version of PostgreSQL:
-
-    cd postgres-8.4.2/
-    make
-    make install
-
-This step only takes about 1-2 minutes, since only a fraction of the postgresql code needs to rebuild. Work with the error messages if the build fails. Even if it compiles, make sure to check the compiler messages for any unexpected warnings. Note that you will have to restart the server for your changes to take effect.
+We placed some **CS186** and **TODO** comments to help you finish the task. It may take you some time to digest the code. Be patient and strategic.
 
 
 ## Buffer Replacement Algorithms
 
-You will need to implement three buffer replacement policies: LRU, MRU and 2Q. The details of LRU and MRU can be found in lecture notes and the textbook. A description of the 2Q algorithm is given below. Note that a buffer page a candidate for any buffer replament algorithm until it has been unpinned (i.e., ref_count turns from one to zero). You never consider replacing a pinned buffer page.
+You need to implement three buffer replacement policies: LRU, MRU and 2Q. The details of LRU and MRU can be found in lecture notes and the textbook. A description of the 2Q algorithm is given below. Note that a buffer page is not a candidate for any buffer replament algorithm until it has been unpinned (i.e., ref_count turns to zero). You never consider replacing a pinned buffer page.
 
 ### The 2Q Buffer Replacement Algorithm
 
@@ -179,6 +171,16 @@ Although the information above would be sufficient for this homework, interested
 http://www.vldb.org/conf/1994/P439.PDF
 
 
+### Rebuild
+
+When you are done working with the source, you need to rebuild and install your modified version of PostgreSQL:
+
+    cd postgres-8.4.2/
+    make
+    make install
+
+This step only takes about 1-2 minutes, since only a fraction of the postgresql code needs to rebuild. Work with the error messages if the build fails. Even if it compiles, make sure to check the compiler messages for any unexpected warnings. You will have to restart the server too for your changes to take effect.
+
 ## Testing and Debugging
 
 ### Populating Test Data
@@ -214,9 +216,7 @@ If you see the following line in the log, that means the PostgreSQL server has b
 
 ### Testing
 
-We now run some testing queries to examine the buffer behavior. Make sure you run these queries on a freshly started server.
-
-Enter psql and run the following 6 queries in a row:
+We now run some testing queries to examine the buffer behavior. Enter psql and run the following 6 queries one by one:
 
     SELECT * FROM raw_r_tuples;
     SELECT * FROM raw_r_tuples;
@@ -224,8 +224,6 @@ Enter psql and run the following 6 queries in a row:
     SELECT * FROM raw_r_tuples r, raw_s_tuples s WHERE r.pkey = s.pkey;
     SELECT * FROM raw_r_tuples r, raw_s_tuples s WHERE r.pkey = s.pkey;
     SELECT * FROM raw_r_tuples r, raw_s_tuples s WHERE r.pkey = s.pkey;
-
-Note: you must run these queries in order. These queries have been since you start the server. Don't restart the server.
 
 If you examine the log file, you will see some messages like this at the end of each query:
 
@@ -247,13 +245,13 @@ The important numbers are after "Shard blocks", which is the buffer pool. In par
 
 ### Reporting Test Results
 
-You are asked to report the test result of the CLOCK, LRU, MRU and 2Q replacement policies, together with the different buffer sizes: 16, 32, 64, and 96 (by changing the "-B" option). 
+You need to report the test result of the CLOCK, LRU, MRU and 2Q replacement policies, together with the different buffer sizes: 16, 32, 64, and 96 (by changing the "-B" option). 
 
-For each combination of replacement policy and buffer pool size, you will have to: 
- 
-* restart the server using the command above with the appropriate parameters
-* run only the above 6 queries in order (avoid running other queries)
-* collect 6 hit rates, one for each query
+For each combination of replacement policy and buffer pool size, you will have to:
+
+* Restart the server using the command above with the appropriate parameters.
+* Open psql, run only the above 6 queries in order. Avoid addtional interaction with the server, as they may affect the buffer behavior.
+* Collect 6 hit rates, one for each query.
 
 Collect the hit rates for all the configurations in one file, `performance.txt`, using the following format:
 
@@ -262,7 +260,7 @@ Collect the hit rates for all the configurations in one file, `performance.txt`,
 * Record the hit rate as a decimal to two places, without the (%) sign, e.g. 99.26.
 * Report the four policies in the following order: clock, lru, mru, lri.
 
-The file will have 16 lines in total. For example (the numbers are made up):
+You need to submit a file that consists of 16 lines in total. For example (the numbers are made up):
 
     clock 16 0.00 99.55 99.55 12.05 23.04 23.04
     clock 32 100.00 100.00 100.00 100.00 100.00 100.00
@@ -272,7 +270,7 @@ The file will have 16 lines in total. For example (the numbers are made up):
     lru 32  ...
     ....
 
-You will need to submit this file. Note that you may get different hit rates in different database settings. We only take this file as a reference when grading your code.
+**Note that you may get different numbers even in slightly different database settings. For grading, we will run your code to produce these numbers and take this file you submitted as a reference.**
 
 ### Debugging
 
@@ -282,7 +280,7 @@ At any point in a function, you can insert an elog() statement to output a messa
 
     elog(LOG, "Two plus three is %d", 2+3);
 
-This may be helpful for debugging purposes. However, make sure you remove all the debugging logs in your code before submission, since writting debugging logs may incur significant overhead and make your program fail to finish when we test it.
+This may be helpful for debugging purposes. However, make sure you remove all the debugging logging from your code before submission, since writting debugging logs may incur significant overhead and make your program fail to finish when we test it.
 
 #### GDB
 
