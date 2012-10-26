@@ -1,0 +1,4 @@
+LOG:  using buffer replacement policy: clock
+LOG:  database system was shut down at 2012-10-24 18:17:44 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
