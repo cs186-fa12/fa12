@@ -7,7 +7,7 @@
 ##Table Of Contents
 *  [Outline](https://github.com/cs186-fa12/fa12/blob/master/hw4/README.md#outline)
 *  [Environment Setup](https://github.com/cs186-fa12/fa12/blob/master/hw4/README.md#environment-setup)
-*  [Code Digesting](https://github.com/cs186-fa12/fa12/blob/master/hw4/README.md#questions)
+*  [Questions](https://github.com/cs186-fa12/fa12/blob/master/hw4/README.md#questions)
 *  [Submission](https://github.com/cs186-fa12/fa12/blob/master/hw4/README.md#submission)
 
 ## Outline
@@ -228,7 +228,7 @@ B. Find the public school (public = 1) with the largest difference between insta
 
 <a href="http://i.imgur.com/eKnCX.jpg?1">You're done! Go play!</a>
 
-## Submittion
+## Submission
 Use
 
     submit hw4
