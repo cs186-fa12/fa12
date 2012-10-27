@@ -56,7 +56,7 @@ We will rebuild Postgres so we're not dependant on your buffer manager code work
 
     ./configure --enable-depend --enable-cassert --enable-debug --prefix=$HOME/pgsql --without-readline
 
-instead of the first line above.
+instead of the first line above. If this fails, first run `chmod 755 configure`, and then try the above command again _(added 10/27)_. 
 
 ### Loading Data
 
@@ -67,6 +67,8 @@ Start the postmaster with `pg_ctl`.  Create a database with `createdb`. Create t
     $HOME/pgsql/bin/psql -p 11111 -f ../hw4.sql colleges
 
 **Instructional machines note**: If you're using an instructional machine, you may get an error that says something like "port 11111" is already in use (<em>check hw4.log!!!!</em>). If you do, this means another student is using that number, so you'll want to change the port to something else by replacing the "-p 11111" command with some other number, throughout all commands here and below.
+
+**Everyone note (10/27)**: If the psql line errors out, open up the `hw4.sql` file and change '$HOME' in lines 7-9 to your explicit home directory. See <a href='https://piazza.com/class#fall2012/cs186/780'>this post on Piazza</a> for more information.
 
 Connect to the `colleges` database using the psql command-line client.
 
