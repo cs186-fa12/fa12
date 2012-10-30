@@ -200,7 +200,7 @@ B. What kind of join is used by the plan?
 
 C. Disable the join type used in the above plan and re-analyze the query.  What type of join is used now, and what is the total estimated cost of the query?
 
-D. What relations are sorted in this plan, and why?
+~~D. What relations are sorted in this plan, and why?~~ (10/30: This question will not be graded.)
 
 <a href="http://26.media.tumblr.com/tumblr_lh4b52TFGl1qd3lqno1_400.jpg">I cannot come up with a caption for this picture.</a>
 
