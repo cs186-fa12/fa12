@@ -7,9 +7,9 @@
 ##Table Of Contents
 *  [Outline](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#outline)
 *  [Environment Setup](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#environment-setup)
-*  [Part 1: Count-Min Sketch](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#count-min-sketch)
-*  [Part 2: Approximate-Top K](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#approximate-top-k)
-*  [Part 3: Testing and Debugging](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#testing-and-debugging)
+*  [Part 1: Count-Min Sketch](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#part-1-count-min-sketch)
+*  [Part 2: Approximate-Top K](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#part-2-approximate-top-k )
+*  [Part 3: Testing and Debugging](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#part-3-testing-and-debugging)
 *  [Submission](https://github.com/cs186-fa12/fa12/blob/master/hw5/README.md#submission)
 
 ## Outline
