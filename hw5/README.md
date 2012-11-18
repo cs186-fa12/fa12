@@ -249,7 +249,7 @@ We can now run some queries to examine the counts we get using our sketch and co
 
 First, lets test if our top-k is working correctly by using the very small dataset containing 10 rows. Try the following query
 
-    SELECT num, APPROX_COUNT(10, 10, 4) AS count FROM numbers-_mall GROUP BY num ORDER BY count DESC;
+    SELECT num, APPROX_COUNT(10, 10, 4) AS count FROM numbers_small GROUP BY num ORDER BY count DESC;
 
 Make sure that the output matches what is expected -- If not, jump over to the debugging section to figure out whats wrong. 
 
